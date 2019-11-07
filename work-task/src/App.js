@@ -1,8 +1,14 @@
 import React from 'react';
 
+// Components
+import { Search } from './components/Search';
+
 function App() {
+  
   return (
-    <div className="App">Hello</div>
+    <div className="App">
+      <Search />
+    </div>
   );
 }
 
