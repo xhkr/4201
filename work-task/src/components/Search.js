@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 // Utils
 import { fetchTeams } from '../api/api';
 import { get } from 'lodash/fp';
+import { getI18n } from 'get-i18n';
 
 // Components
 import { SearchAutoComplete } from './SearchAutoComplete';
@@ -25,14 +26,14 @@ export const Search = () => {
 
   return (
     <Root>
-      <Label htmlFor='team-names'>Search</Label>
+      <Label htmlFor='team-names'>{getI18n('search.label')}</Label>
       <Input type='search'
              id='team-names'
              name='name'
              onChange={(e) => search(e)}
-             aria-label='Search for team names' />
+             aria-label={getI18n('search.ariaLabel')} />
       <SearchAutoComplete list={searchResults} query={searchQuery} />
-      <Button>Search</Button>
+      <Button>{getI18n('search.button')}</Button>
     </Root>
   );
 }
